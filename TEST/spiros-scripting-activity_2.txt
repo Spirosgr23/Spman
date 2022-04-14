@@ -1,0 +1,32 @@
+#!/bin/sh
+
+date=$(date '+%Y-%m-%d')
+for i in file*;
+  do name=`echo "$i" | cut -d'_' -f1` 
+  mv "$i" "${name}.$date"
+done
+
+#!/bin/sh
+
+date=$(date '+%Y-%m-%d')
+for i in file*;
+  do name=`echo "$i" | cut -d'_' -f1` 
+  mv "$i" "${name}.$date"
+done
+
+#!/bin/sh
+
+date=$(date '+%Y-%m-%d')
+for i in file*;
+  do name=`echo "$i" | cut -d'_' -f1` 
+  mv "$i" "${name}.$date"
+done
+
+#!/bin/sh
+
+date=$(date '+%Y-%m-%d')
+for i in file*;
+  do name=`echo "$i" | cut -d'_' -f1` 
+  mv "$i" "${name}.$date"
+done
+
