@@ -1,0 +1,8 @@
+#!/bin/sh
+
+date=$(date '+%Y-%m-%d')
+for i in file*;
+  do name="$i" 
+  mv "$i" "${name}.$date"
+done
+
