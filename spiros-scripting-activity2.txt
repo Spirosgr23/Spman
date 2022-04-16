@@ -1,9 +1,0 @@
-#!/bin/sh
-
-date=$(date '+%Y-%m-%d')
-for i in file*;
-  do name=`echo "$i" | cut -d'_' -f1`
-  echo "Executing of name $name" 
-  mv "$i" "${name}file.$date"
-done
-
