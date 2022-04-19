@@ -1,0 +1,24 @@
+#!/bin/bash
+echo " "
+echo "Welcome, If (a) is larger than (b), the word True will appear on screen, otherwise, the word False"
+echo " "
+
+echo -n "enter a number for a:"; read a
+echo -n " enter a number for b:"; read b
+
+
+if [[ -n ${a//[0-99999999]/} ]]; then
+ { echo "Please try again, input accepts only numbers" & exit 0; }
+
+
+ elif [[ -n ${b//[0-99999999]/} ]]; then
+{ echo "Please try again, input accepts only numbers" & exit 0; }
+fi
+
+if [[ "$a" -gt "$b" ]]; then
+ echo "True"
+
+ elif [[ "$a" -lt "$b" ]]; then
+ echo "False"
+
+ fi

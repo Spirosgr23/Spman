@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+declare -A quiz
+
+quiz["Salmon is a fish"]="F"
+quiz+=( ["Lions are carnivores"]="T" )
+quiz+=( ["Dinosaurs are extinct"]="T" )
+quiz+=( ["Earth is not flat"]="T" )
+quiz+=( ["Oxygen is vital for life"]="T" )
+quiz+=( ["Ancient Greeks invented spaceships"]="F" )
+quiz+=( ["Sharks have tiny legs"]="F" )
+quiz+=( ["China is larger than Italy"]="T" )
+quiz+=( ["Earth is the only habitable planet in the whole universe"]="F" )
+quiz+=( ["The budget for the movie HEAT was 1.000.000.000"]="F" )
+
+i=1
+score=0
+for key in "${!quiz[@]}"; do
+    
+    echo Question $i: "${key}"
+    read -p "True (T) or False (F)?: " answer
+
+    if [ "$answer" = "${quiz["$key"]}" ]; then
+        let score++
+    fi
+
+    let i++
+done
+
+
+printf "\n---You scored $score correct answers---"
+printf  "\n\tSolutions:\n" 
+i=1
+for key in "${!quiz[@]}"; do
+   echo "$i."${key}" : "${quiz["$key"]}""
+   let i++
+done
+
+exit 0

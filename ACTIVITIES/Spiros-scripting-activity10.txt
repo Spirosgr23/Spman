@@ -1,0 +1,36 @@
+#!/bin/sh
+
+touch file1.txt
+
+read -p 'These are your random numbers, name the file you want the numbers to be in ' num
+
+if [ -z "${num}" ]; then
+ { echo "Please try again, input cannot be blank" & exit 0; }
+
+fi
+
+touch $num.txt
+
+read -p 'How many lines you want to be inserted? ' lin
+
+if [[ -n ${lin//[0-99999999]/} ]]; then
+ { echo "Please try again, input accepts only numbers" & exit 0; }
+ elif 
+ [ -z "${lin}" ]; then
+ { echo "Please try again, input cannot be blank" & exit 0; }
+fi
+
+a=$(shuf -i 0-10000 -n $lin)
+
+echo "These are the lines of random numbers generated for your file"
+echo "(the file is located in the directory in which you run the script):"
+echo " "
+echo "Your file name is $num"
+echo " "
+echo $a > $num.txt
+cat $num.txt
+
+echo " "
+echo " "
+echo "Thank you for using the script!!!!"
+

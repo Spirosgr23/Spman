@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# Prompt user to insert inputs 
+read -p 'Enter Number 1: ' num1
+read -p 'Enter Number 2: ' num2
+read -p 'Enter Number 3: ' num3 
+read -p 'Enter Number 4: ' num4 
+read -p 'Enter Number 5: ' num5 
+read -p "Do you want to add more numbers or stop here? Press Yy (yes) or Nn (No) " yn
+
+# Calculations for 5 numbers
+ans1=$(( num1 * num2 * num3 * num4 * num5 ))
+ans11=$(( num1 + num2 + num3 + num4 + num5 ))
+ans111=$(( $ans11 / 5 ))
+
+# Min and Max
+
+
+# User stops at 5 or continues/Actions
+if [[ $yn =~ ^[Yy]$ ]]
+then
+ read -p 'Enter Number 6: ' num6
+ read -p 'Enter Number 7: ' num7
+ read -p 'Enter Number 8: ' num8
+ read -p 'Enter Number 9: ' num9
+ read -p 'Enter Number 10: ' num10
+ 
+ else
+  echo "The product of the integers is: $ans1"
+  echo "The sum of the integers is: $ans11"
+  echo "The average of the integers is: $ans111"
+  { echo "Thank you for using the script" & exit 0; }
+
+fi
+
+read -p "Do you want to proceed with calculations results? Press Yy (yes) or Nn (No) " yn
+
+# Calculations for 10 numbers
+ans2=$(( num1 * num2 * num3 * num4 * num5 * num6 * num7 * num8 * num9 * num10 ))
+ans22=$(( num1 + num2 + num3 +num4 +num5 + num6 + num7 + num8 + num9 + num10 ))
+ans222=$(( $ans22 / 10 ))
+
+if [[ $yn =~ ^[Yy]$ ]]
+ then
+  echo "The product of the integers is: $ans2"
+  echo "The sum of the integers is: $ans22"
+  echo "The average of the integers is: $ans222"
+  { echo "Thanks for using the script" & exit 0; }
+ else
+
+ { echo "Goodbye then, hope you try the script again" & exit 0; }
+
+fi
+    
+
+
+
+    
+
+    
+    
+    
+

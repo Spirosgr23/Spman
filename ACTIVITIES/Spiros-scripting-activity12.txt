@@ -1,0 +1,32 @@
+# Prompt user to insert inputs (one at a time)
+
+read -p 'Enter file 1 name ' name1
+
+touch $name1.txt
+
+read -p 'Enter file 2 name ' name2
+
+touch $name2.txt
+
+read -p "Now enter a word or sentence for '$name1.txt' " sen1
+read -p "Now enter a word or sentence for '$name2.txt (It can be the same or different)' " sen2
+
+echo $sen1 > $name1.txt
+echo $sen2 > $name2.txt
+
+read -p 'Press Yes (Yy) to run the comparison on your files or No (Nn) to exit ' yn
+
+if [[ $yn =~ ^[Yy]$ ]]
+ then
+ cmp -s "$name1.txt" "$name2.txt"
+ else
+  { echo "Oops, no file comparison for you today" & exit 0; }
+fi
+
+if cmp -s "$name1.txt" "$name2.txt"
+then
+   echo "The files match"
+else
+   echo "The files are different"
+fi
+

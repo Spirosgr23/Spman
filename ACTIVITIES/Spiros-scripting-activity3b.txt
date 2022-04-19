@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+
+echo "Type your lucky numbers (5 + 1 bonus)"
+read plN
+
+echo "Type the date you want to check (format: DDMMYY)"
+read dtL
+lotteryNumbersString="$(cat $dtL)"
+
+lotteryNumbers=(`echo $lotteryNumbersString | tr ' ' ' '`)
+
+plN=(`echo $plN | tr ' ' ' '`)
+
+echo ${lotteryNumbers[@]}
+echo ${plN[@]}
+
+counter=0
+for((i=0;i<${#plN[*]}-1;i++)); do
+    for((j=0;j<${#lotteryNumbers[*]}-1;j++)); do
+        if [ ${plN[i]} = ${lotteryNumbers[j]} ]; then
+             let counter++
+        fi
+        
+    done
+done
+
+echo You got $counter numbers
+
+if [ ${lotteryNumbers[${#lotteryNumbers[*]}-1]} = ${plN[${#playersNumbers[*]}-1]} ]; then
+     echo "You got the bonus number!!!"
+else 
+    echo "You did not get the bonus number"
+fi
+
+exit 0
