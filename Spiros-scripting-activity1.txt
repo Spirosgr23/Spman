@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "My user name is" $(whoami)
+echo "Current Directory is" $(pwd)
+dt=$(date '+%d/%m/%Y %H:%M:%S');
+echo "Date and time are $dt"
+echo -e "These are all the files in this directory:\n" $(ls -h)
+echo "The largest file in this directory is:" $(du -ah $(pwd) |sort -n -r|head -n 1)

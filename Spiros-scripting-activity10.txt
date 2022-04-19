@@ -1,0 +1,29 @@
+#!/bin/sh
+
+touch file1.txt
+
+read -p 'Name the file you want the numbers to be in ' num
+
+if [ -z "${num}" ]; then
+ { echo "Please try again, input cannot be blank" & exit 0; }
+
+fi
+
+touch $num.txt
+
+read -p 'How many lines you want to be inserted? ' lin
+
+if [[ -n ${lin//[0-99999999]/} ]]; then
+ { echo "Input accepts only numbers" & exit 0; }
+ elif 
+ [ -z "${lin}" ]; then
+ { echo "Input cannot be blank" & exit 0; }
+fi
+
+a=$(shuf -i 0-10000 -n $lin)
+
+echo "These are the lines of random numbers generated"
+echo $a > $num.txt
+cat $num.txt
+exit 0;
+

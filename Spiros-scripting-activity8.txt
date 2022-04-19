@@ -1,0 +1,57 @@
+#!/bin/sh
+
+read -p 'Enter Number 1: ' num1
+read -p 'Enter Number 2: ' num2
+read -p 'Enter Number 3: ' num3 
+read -p 'Enter Number 4: ' num4 
+read -p 'Enter Number 5: ' num5 
+read -p "Do you want to add more numbers? Press Yy (yes) or Nn (No) " yn
+
+ans1=$(( num1 * num2 * num3 * num4 * num5 ))
+ans11=$(( num1 + num2 + num3 + num4 + num5 ))
+ans111=$(( $ans11 / 5 ))
+
+
+if [[ $yn =~ ^[Yy]$ ]]
+then
+ read -p 'Enter Number 6: ' num6
+ read -p 'Enter Number 7: ' num7
+ read -p 'Enter Number 8: ' num8
+ read -p 'Enter Number 9: ' num9
+ read -p 'Enter Number 10: ' num10
+ 
+ else
+  echo "The product of the integers is: $ans1"
+  echo "The sum of the integers is: $ans11"
+  echo "The average of the integers is: $ans111"
+  exit 0;
+
+fi
+
+read -p "Do you want to continue? Press Yy (yes) or Nn (No) " yn
+
+ans2=$(( num1 * num2 * num3 * num4 * num5 * num6 * num7 * num8 * num9 * num10 ))
+ans22=$(( num1 + num2 + num3 +num4 +num5 + num6 + num7 + num8 + num9 + num10 ))
+ans222=$(( $ans22 / 10 ))
+
+if [[ $yn =~ ^[Yy]$ ]]
+ then
+  echo "The product of the integers is: $ans2"
+  echo "The sum of the integers is: $ans22"
+  echo "The average of the integers is: $ans222"
+  { echo "Thanks for using the script" & exit 0; }
+ else
+
+  exit 0;
+
+fi
+    
+
+
+
+    
+
+    
+    
+    
+
