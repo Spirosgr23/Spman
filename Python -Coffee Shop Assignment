@@ -1,0 +1,44 @@
+#Spyridon Manouras 03/05/2022
+
+#Coffee Cup Selection
+cost = 0
+cup = input ("Choose your cup size,small,medium or large:")
+if cup == "small":
+    cost = 2
+elif cup =="medium":
+    cost = 3
+elif cup =="large":
+        cost = 4
+else:
+    print("Please choose only between small,medium and large or check your spelling")
+
+#Coffee variety Selection
+coffee = input("Do you want brewed, espresso, or cold press? ")
+if coffee == "brewed":
+     cost+=0
+elif coffee == "espresso":
+    cost+=0.5
+elif coffee == "cold" or coffee == "cold press":
+    cost+=1
+else:
+ print("Invalid input of coffee kind")
+ 
+ #Coffee Flavour Selection
+flavour = input("Do you want a flavoured syrup? (Yes or No) ")
+if flavour == "yes" or flavour=="Yes" or flavour=="YES":
+    flavourType = input("Do you want hazelnut, vanilla, or caramel? ")
+    if flavourType == "hazelnut" or flavourType == "vanilla" or flavourType == "caramel":
+      cost+=0.5
+    else:
+      print("Invalid flavour type")
+
+
+ 
+ #Results
+print("You asked for a "+cup+" cup of "+coffee+" coffee with "+flavourType+" syrup.")
+print("Your cup of coffee costs "+str(cost))
+
+#Add a Tip
+cost+=cost*0.15
+print("The price with a tip is %.2f"%(cost))
+    
